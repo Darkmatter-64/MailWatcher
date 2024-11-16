@@ -36,8 +36,9 @@ public class PickUpItem : MonoBehaviour
     private void OnMouseUp()
     {
         CameraMove.LetterUIImage.sprite = LetterText;
-        if (HoldingTime <= 0.14f)
+        if (HoldingTime <= 0.14f && CameraMove.CanOpenLetter == true)
         {
+            CameraMove.CanOpenLetter = false;
             CameraMove.OnLetter = true;
         }
         HoldingTime = 0;

@@ -10,6 +10,7 @@ public class CameraMove : MonoBehaviour
     private float moveInputV;
     public float speed = 3f;
     public static bool OnLetter = false;
+    public static bool CanOpenLetter = true;
     public static Image LetterUIImage;
     public Image LetterUIImageCurrent;
     public GameObject LettersUI;
@@ -23,9 +24,16 @@ public class CameraMove : MonoBehaviour
     }
     void FixedUpdate()
     {
-        moveInputH = Input.GetAxis("Horizontal");
-        moveInputV = Input.GetAxis("Vertical");
-        rb.velocity = new Vector2(moveInputH * speed, moveInputV * speed);
+        if (CanOpenLetter == true)
+        {
+            moveInputH = Input.GetAxis("Horizontal");
+            moveInputV = Input.GetAxis("Vertical");
+            rb.velocity = new Vector2(moveInputH * speed, moveInputV * speed);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0,0);
+        }
     }
 
     // Update is called once per frame

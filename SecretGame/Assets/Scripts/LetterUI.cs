@@ -8,6 +8,7 @@ public class LetterUI : MonoBehaviour
 
     public void CloseLetter()
     {
+        CameraMove.CanOpenLetter = true;
         CameraMove.OnLetter = false;
     }
 }
