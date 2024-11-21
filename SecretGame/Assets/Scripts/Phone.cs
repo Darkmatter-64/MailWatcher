@@ -7,12 +7,13 @@ public class Phone : MonoBehaviour
 {
     public GameObject TextCloud;
     public Text TextFromPhone;
+    public Text ShowNumber;
     public static string PhoneNumber = "";
     public string[] Numbers;
     public float Timer = 0;
     public int IntTimer = 0;
     private bool ItWorks = false;
-    private bool StartWrite = false;
+    public static bool StartWrite = false;
     private int NumberThatWas = 99999;
     private string TextToWrite = "";
     private string TextThatIsWriting;
@@ -31,25 +32,9 @@ public class Phone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PhoneNumber.Length == 4)
-        {
-            for (int i = 0; i < Numbers.Length; i++)
-            {
-                if (Numbers[i].Equals(PhoneNumber))
-                {
-                    ItWorks = true;
-                    StartWrite = true;
-                    //TextFromPhone.text = PhoneStringsDay1[i];
-                    TextToWrite = PhoneStringsDay1[i];
-                    Debug.Log(TextToWrite);
-                    PhoneNumber = "";
-                    TextCloud.SetActive(true);
-                    TextFromPhone.text = "";
-                }
-            }
+        ShowNumber.text = PhoneNumber;
 
-        }
-        if (PhoneNumber.Length >= 4)
+        if (PhoneNumber.Length > 4)
         {
             PhoneNumber = "";
         }
@@ -84,19 +69,48 @@ public class Phone : MonoBehaviour
     }
     private IEnumerator WaitSomeTime()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1f);
         TextFromPhone.text += "";
         StartWrite = false;
         NumberThatWas = 99999;
         Timer = 0;
         IntTimer = 0;
         TextCloud.SetActive(false);
+        CameraMove.CanOpenLetter = true;
     }
     private IEnumerator WaitToClearTime()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1f);
         TextFromPhone.text = "";
         Timer += 1;
+    }
+
+
+    private void OnMouseDown()
+    {
+        if (PhoneNumber.Length == 4)
+        {
+            for (int i = 0; i < Numbers.Length; i++)
+            {
+                if (Numbers[i].Equals(PhoneNumber) && i < Numbers.Length)
+                {
+                    CameraMove.CanOpenLetter = false;
+                    ItWorks = true;
+                    StartWrite = true;
+                    //TextFromPhone.text = PhoneStringsDay1[i];
+                    TextToWrite = PhoneStringsDay1[i];
+                    Debug.Log(TextToWrite);
+                    PhoneNumber = "";
+                    TextCloud.SetActive(true);
+                    TextFromPhone.text = "";
+                }
+                else if (i == Numbers.Length -1)
+                {
+                    PhoneNumber = "";
+                }
+            }
+
+        }
     }
 
 }

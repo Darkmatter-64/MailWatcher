@@ -19,7 +19,18 @@ public class PhoneButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Phone.PhoneNumber += WriteNumber;
-        Debug.Log(Phone.PhoneNumber);
+        if (Phone.StartWrite == false)
+        {
+
+            if (Phone.PhoneNumber.Length < 4)
+            {
+                Phone.PhoneNumber += WriteNumber;
+                Debug.Log(Phone.PhoneNumber);
+            }
+            else
+            {
+                Phone.PhoneNumber = "";
+            }
+        }
     }
 }

@@ -14,6 +14,10 @@ public class CameraMove : MonoBehaviour
     public static Image LetterUIImage;
     public Image LetterUIImageCurrent;
     public GameObject LettersUI;
+    public static int TheDay = 0;
+
+
+
     // Start is called before the first frame update
     void Start()
     {

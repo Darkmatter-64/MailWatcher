@@ -9,9 +9,19 @@ public class Notebook : MonoBehaviour
     public int PageNumber = 0;
     public GameObject RightButtonObject;
     public GameObject LeftButtonObject;
+
+
+    private bool dragging = false;
+    private Vector3 offset;
+    private Vector3 startPosition;
+    public Sprite LetterText;
+    public float HoldingTime;
     // Start is called before the first frame update
     void Start()
     {
+        {
+            startPosition = transform.position;
+        }
         //NotebookText = Pages[0];
         CanvasNotebook.SetActive(false);
         Pages[1].SetActive(false);
@@ -34,6 +44,15 @@ public class Notebook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dragging == true && CameraMove.CanOpenLetter == true)
+        {
+            if (HoldingTime <= 1)
+            {
+                HoldingTime = HoldingTime + Time.deltaTime;
+            }
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+        }
+
         Pages[PageNumber].SetActive(true);
 
         if (PageNumber == 0)
@@ -56,11 +75,20 @@ public class Notebook : MonoBehaviour
             Pages[PageNumber + 1].SetActive(false);
         }
     }
-
+    private void OnMouseDown()
+    {
+        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        dragging = true;
+    }
     private void OnMouseUp()
     {
-        CameraMove.CanOpenLetter = false;
-        CanvasNotebook.SetActive(true);
+        if (HoldingTime <= 0.14f && CameraMove.CanOpenLetter == true)
+        {
+            CameraMove.CanOpenLetter = false;
+            CanvasNotebook.SetActive(true);
+        }
+        HoldingTime = 0;
+        dragging = false;
     }
     public void CloseFolder()
     {

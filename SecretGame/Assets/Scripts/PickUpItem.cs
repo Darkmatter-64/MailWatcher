@@ -18,7 +18,7 @@ public class PickUpItem : MonoBehaviour
     }
     private void Update()
     {
-        if (dragging == true)
+        if (dragging == true && CameraMove.CanOpenLetter == true)
         {
             if (HoldingTime <= 1)
             {
