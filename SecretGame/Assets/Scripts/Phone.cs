@@ -9,6 +9,9 @@ public class Phone : MonoBehaviour
     public Text TextFromPhone;
     public Text ShowNumber;
     public static string PhoneNumber = "";
+    public GameObject AppearWhenUse;
+    public GameObject DissapearWhenUse;
+    [Header("Numbers")]
     public string[] Numbers;
     public float Timer = 0;
     public int IntTimer = 0;
@@ -26,6 +29,8 @@ public class Phone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AppearWhenUse.SetActive(false);
+        DissapearWhenUse.SetActive(true);
         TextCloud.SetActive(false);
     }
 
@@ -76,6 +81,8 @@ public class Phone : MonoBehaviour
         Timer = 0;
         IntTimer = 0;
         TextCloud.SetActive(false);
+        AppearWhenUse.SetActive(false);
+        DissapearWhenUse.SetActive(true);
         CameraMove.CanOpenLetter = true;
     }
     private IEnumerator WaitToClearTime()
@@ -102,6 +109,8 @@ public class Phone : MonoBehaviour
                     Debug.Log(TextToWrite);
                     PhoneNumber = "";
                     TextCloud.SetActive(true);
+                    AppearWhenUse.SetActive(true);
+                    DissapearWhenUse.SetActive(false);
                     TextFromPhone.text = "";
                 }
                 else if (i == Numbers.Length -1)

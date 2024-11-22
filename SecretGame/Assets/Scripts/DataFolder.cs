@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DataFolder : MonoBehaviour
 {
     public GameObject CanvasDataFolder;
-    public Sprite[] Pages;
+    public GameObject[] Pages;
     public Image ImagePage;
     public GameObject RightButtonObject;
     public GameObject LeftButtonObject;
@@ -22,7 +22,7 @@ public class DataFolder : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        ImagePage.sprite = Pages[0];
+        CheckMassive();
         CanvasDataFolder.SetActive(false);
     }
 
@@ -37,7 +37,11 @@ public class DataFolder : MonoBehaviour
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
 
-        ImagePage.sprite = Pages[PageNumber];
+        Pages[PageNumber].SetActive(true);
+
+
+
+
 
         if (PageNumber == 0)
         {
@@ -46,6 +50,7 @@ public class DataFolder : MonoBehaviour
         else
         {
             LeftButtonObject.SetActive(true);
+            Pages[PageNumber - 1].SetActive(false);
         }
         if (PageNumber == Pages.Length - 1)
         {
@@ -54,6 +59,7 @@ public class DataFolder : MonoBehaviour
         else
         {
             RightButtonObject.SetActive(true);
+            Pages[PageNumber + 1].SetActive(false);
         }
     }
     private void OnMouseDown()
@@ -65,6 +71,7 @@ public class DataFolder : MonoBehaviour
     {
         if (HoldingTime <= 0.14f && CameraMove.CanOpenLetter == true)
         {
+            //CheckMassive();
             CameraMove.CanOpenLetter = false;
             CanvasDataFolder.SetActive(true);
         }
@@ -86,4 +93,14 @@ public class DataFolder : MonoBehaviour
     {
         PageNumber--;
     }
+
+
+    public void CheckMassive()
+    {
+        for (int i = 0; i < Pages.Length; i++)
+        {
+            Pages[i].SetActive(false);
+        }
+    }
+
 }
