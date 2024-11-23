@@ -14,6 +14,7 @@ public class DataFolder : MonoBehaviour
 
 
     private bool dragging = false;
+    private bool OnCollisition;
     private Vector3 offset;
     private Vector3 startPosition;
     public Sprite LetterText;
@@ -25,7 +26,15 @@ public class DataFolder : MonoBehaviour
         CheckMassive();
         CanvasDataFolder.SetActive(false);
     }
-
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Out")
+        {
+            OnCollisition = true;
+            //dragging = false;
+            //transform.position = startPosition;
+        }
+    }
     private void Update()
     {
         if (dragging == true && CameraMove.CanOpenLetter == true)
@@ -36,7 +45,13 @@ public class DataFolder : MonoBehaviour
             }
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
+        if (dragging == false && OnCollisition == true)
+        {
+            OnCollisition = false;
+            dragging = false;
+            transform.position = startPosition;
 
+        }
         Pages[PageNumber].SetActive(true);
 
 
@@ -77,6 +92,10 @@ public class DataFolder : MonoBehaviour
         }
         HoldingTime = 0;
         dragging = false;
+        if (dragging == false && OnCollisition == false)
+        {
+            startPosition = transform.position;
+        }
     }
 
 

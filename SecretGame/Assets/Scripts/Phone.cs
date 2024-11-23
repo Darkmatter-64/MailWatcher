@@ -26,6 +26,12 @@ public class Phone : MonoBehaviour
     public string[] PhoneStringsDay2;
     public string[] PhoneStringsDay3;
     public bool IsThereSuchNumber;
+    [Header("Pimpka")]
+    public Sprite SpriteGray;
+    public Sprite SpriteRed;
+    public Sprite SpriteGreen;
+    public SpriteRenderer srPimpka;
+    private bool TelefonoWorkds;
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +90,8 @@ public class Phone : MonoBehaviour
         AppearWhenUse.SetActive(false);
         DissapearWhenUse.SetActive(true);
         CameraMove.CanOpenLetter = true;
+        TelefonoWorkds = false;
+        srPimpka.sprite = SpriteGray;
     }
     private IEnumerator WaitToClearTime()
     {
@@ -112,14 +120,55 @@ public class Phone : MonoBehaviour
                     AppearWhenUse.SetActive(true);
                     DissapearWhenUse.SetActive(false);
                     TextFromPhone.text = "";
+                    TelefonoWorkds = true;
+                    srPimpka.sprite = SpriteGreen;
                 }
-                else if (i == Numbers.Length -1)
+                else if (i == Numbers.Length -1 && TelefonoWorkds == false)
                 {
                     PhoneNumber = "";
+                    StartCoroutine(RedPimpka());
                 }
             }
 
         }
+    }
+    private IEnumerator RedPimpka()
+    {
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteRed;
+        yield return new WaitForSeconds(0.1f);
+        srPimpka.sprite = SpriteGray;
     }
 
 }

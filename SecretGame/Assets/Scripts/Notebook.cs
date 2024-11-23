@@ -12,6 +12,7 @@ public class Notebook : MonoBehaviour
 
 
     private bool dragging = false;
+    private bool OnCollisition;
     private Vector3 offset;
     private Vector3 startPosition;
     public Sprite LetterText;
@@ -41,6 +42,15 @@ public class Notebook : MonoBehaviour
         Pages[15].SetActive(false);
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Out")
+        {
+            OnCollisition = true;
+            //dragging = false;
+            //transform.position = startPosition;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -51,6 +61,13 @@ public class Notebook : MonoBehaviour
                 HoldingTime = HoldingTime + Time.deltaTime;
             }
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+        }
+        if (dragging == false && OnCollisition == true)
+        {
+            OnCollisition = false;
+            dragging = false;
+            transform.position = startPosition;
+
         }
 
         Pages[PageNumber].SetActive(true);
@@ -89,6 +106,10 @@ public class Notebook : MonoBehaviour
         }
         HoldingTime = 0;
         dragging = false;
+        if (dragging == false && OnCollisition == false)
+        {
+            startPosition = transform.position;
+        }
     }
     public void CloseFolder()
     {

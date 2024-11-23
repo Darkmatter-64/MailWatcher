@@ -5,16 +5,28 @@ using UnityEngine.UI;
 
 public class PickUpItem : MonoBehaviour
 {
-    private bool dragging = false;
+
+    public bool dragging = false;
     private Vector3 offset;
     private Vector3 startPosition;
     public Sprite LetterText;
     public float HoldingTime;
+    private bool OnCollisition;
 
     // Start is called before the first frame update
     private void Start()
     {
         startPosition = transform.position;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Out")
+        {
+            OnCollisition = true;
+            //dragging = false;
+            //transform.position = startPosition;
+        }
     }
     private void Update()
     {
@@ -26,8 +38,14 @@ public class PickUpItem : MonoBehaviour
             }
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
-    }
+        if (dragging == false && OnCollisition == true)
+        {
+            OnCollisition = false;
+            dragging = false;
+            transform.position = startPosition;
 
+        }
+    }
     private void OnMouseDown()
     {
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -43,6 +61,12 @@ public class PickUpItem : MonoBehaviour
         }
         HoldingTime = 0;
         dragging = false;
+        if (dragging == false && OnCollisition == false)
+        {
+            startPosition = transform.position;
+        }
     }
+
+
 
 }
