@@ -96,7 +96,7 @@ public class PointOnMap : MonoBehaviour
         {
             PaperIn = false;
             TheText.text = "";
-            animaPaper.Play("PaperDisapear");
+            animaPaper.Play("PaperDissapear");
         }
     }
 }

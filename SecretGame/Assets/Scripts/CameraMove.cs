@@ -14,7 +14,7 @@ public class CameraMove : MonoBehaviour
     public static Image LetterUIImage;
     public Image LetterUIImageCurrent;
     public GameObject LettersUI;
-    public static int TheDay = 0;
+    public static int TheDay = 1;
 
 
 
