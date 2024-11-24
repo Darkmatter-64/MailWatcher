@@ -12315,6 +12315,9 @@ MonoBehaviour:
   ShowNumber: {fileID: 1452335728}
   AppearWhenUse: {fileID: 369557712}
   DissapearWhenUse: {fileID: 254482569}
+  Day1Accepted: 0
+  Day4Accepted: 0
+  Day9Accepted: 0
   Numbers:
   - 1234
   - 1454
@@ -12323,26 +12326,42 @@ MonoBehaviour:
   - 1668
   - 1544
   - 1875
-  - 1984
+  - 1084
   - 1321
   - 1156
   - 1891
   - 1029
   - 1450
-  - 1945
+  - 1405
   - 1008
-  - 1990
+  - 1090
   - 1555
   Timer: 0
   IntTimer: 0
   PhoneStringsDay1:
-  - "\u0411\u043E\u0441\u0441"
-  - "\u041B\u0438\u0437\u0430-\u041F\u0430\u0440\u0444\u044E\u043C\u0435\u0440\u0448\u0430"
-  - "\u041A\u0430\u0442\u0438-\u0410\u043D\u0442\u0438\u0427\u0438\u0441\u0442\u044E\u043B\u044F"
+  - "Hey!/ I just told you not to call me, and now you've done it already...../ I
+    know it's not every day your favourite boss Charlie gets to go to Hawaii, but
+    that\u2019s how life is!/ I'm packing my bags right now, so it'd be great if
+    you didn't distract me."
+  - "Good afternoon, this is [Name of place]. Main manager Lisa speaking./ We have
+    perfumes for all tastes./ We can offer you a perfume with.../ Oh.... Um, lemon
+    or cheese or-/ Well, we've got lots of them here, you could go ahead and choose
+    one yourself.../ Sorry, I\u2019m too busy to talk right now."
+  - "Oh! Good afternoon!/ That's funny. I didn't know we had a phone in the house/
+    It's been here all this time, how did I not notice it?/ I wonder if Lisa has
+    a phone too.../ \u041E! Have you\u2019ve heard of Lisa? She\u2019s my bestie!!/
+    She works in perfume and..... Em.... / She makes perfumes!!!/ You should definetly
+    try some perfumes of hers if you didn\u2019t yet!/ They are amazing!!"
   - "\u0421\u0432\u0438\u043D\u043A\u0430 \u0432 \u0432\u0438\u0434\u0435 \u0443\u0442\u043A\u0438"
   - "\u0423\u0442\u043A\u0430 \u0432 \u0432\u0438\u0434\u0435 \u0441\u0432\u0438\u043D\u043A\u0438"
-  - "\u0414\u0438\u0440\u0435\u043A\u0442\u043E\u0440 \u043A\u0430\u0444\u0435"
-  - "\u0414\u0438\u0440\u0435\u043A\u0442\u043E\u0440 \u0431\u0443\u043B\u043E\u0447\u043D\u043E\u0439"
+  - "Hey! You've called the [Cafe Name]./ This is the best cafe in this town!/ It's
+    the best because it's the only one!/ We have everything/ We've got tea, we've
+    got coffee-- Lots of coffee!/ Lattes, espresso, all of em! What\u2019s more.../
+    Oh, yeah! Raf, Gibra. Gibral. G-/ G-e-b-r-a-l-t-a-r./ Yes! Um... And... Try our
+    English breakfast without being in England./ We are always welcome you!/"
+  - Good afternoon. [Name of bakery] speaking./ To my great regret, we will not be
+    able to provide you with our products for the next couple of days. / Please accept
+    our deepest apologies.
   - "\u0414\u0435\u0434 \u043F\u0438\u0440\u0430\u0442-\u0448\u0438\u0437\u0438\u043A"
   - "\u0416\u0443\u0440\u043D\u0430\u043B\u0438\u0441\u0442"
   - "\u041C\u0430\u0442\u044C-\u043E\u0434\u0438\u043D\u043E\u0447\u043A\u0430 \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u0430"
@@ -12351,8 +12370,12 @@ MonoBehaviour:
   - "\u041F\u0435\u0440\u0441\u043E\u043D\u0430\u0436-\u0441\u0442\u0443\u0434\u0435\u043D\u0442"
   - "\u0447\u0435\u043B \u0437\u0430\u0441\u0442\u0440\u044F\u0432\u0448\u0438\u0439
     \u043D\u0430 \u0447\u0435\u0440\u0434\u0430\u043A\u0435"
-  - "\u0417\u0430\u043A\u0430\u0437\u0447\u0438\u043A \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\u0430
-    \u0431\u0443\u043B\u043E\u0433\u0447\u043D\u043E\u0439"
+  - '[Buyer''s Name] speaking./ No matter who you are or why you''re calling./ We
+    have some great news for you!/ Dickson has been missing for a couple of days
+    now./ Whoever the kidnapper is, we''re very grateful!/ The bastard is finally
+    out of town./ In honour of that, we have a little event planned at [Event Location]./
+    The [BAKERY NAME] will be even providing us with snacks!/ We''ll be waiting for
+    you, whoever you are, please come!'
   - "\u0443\u0447\u0435\u043D\u044B\u0439"
   - "\u0431\u0435\u0434\u043D\u044B\u0439 \u043F\u043E\u0447\u0442\u0430\u043B\u044C\u043E\u043D"
   - "\xBFHola junaites steits? \xBFParque nacional de los stones?/Es un llama que
@@ -12361,8 +12384,244 @@ MonoBehaviour:
     con el rinoceronte que rinoceronta?/AAAaaja.... \xBFA?/\xBFO con el hipop\xF3tamo
     que hipot\xE1lamo?/..../\xBFO  con el cocodrilo que Dundee?/........ AYYY                
     *dunk*/Tuve que hacerlo....."
-  PhoneStringsDay2: []
-  PhoneStringsDay3: []
+  PhoneStringsDay2:
+  - Hey! I asked you not to call me!!!/ Anyway, now that you've called/ You won't
+    believe where I am!/ I'm in Hawaii!/ Have you ever tried Laulau?/ It's a real
+    Hawaiian dish!/ It's so delicious!/ And it only costs a couple of holidays!/
+    Hey, but why should I share all the good stuff with you?/ All the good stuff
+    is mine!/ Goodbye, the one-not-in-Hawaii!
+  - Good afternoon, this is [Name of place]. Main manager Lisa speaking./ We have
+    perfumes for every taste./ Well, exept fish./ For now./ Somebody bought it all
+    up yesterday.
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Hey! You've reached the [Cafe Name]. This is the best cafe in this town!/ Where
+    else will you taste Gibral's coffee..... Gibral..../ DAMN IT!!! G - e - b - r
+    - a - l - t - a - r./ Ehem.. That\u2019s right! Nowhere!/ Because it's the only
+    cafe in our coffee!/ \u041Eh! And we have limited edition buns left!/ Hurry up
+    and buy some before I\u2019ll eat them all myself!. "
+  - Good afternoon. [Name of bakery] speaking./ To my great regret, we will not be
+    able to provide you with our products for the next couple of days. / Please accept
+    our deepest apologies.
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Hello! It\u2019s [Buyer's Name]! Can't chat for too long unfortunatelly, have
+    some business going on today at [Meeting Place]. Also, if you didn\u2019t hear
+    yet, we\u2019re having a small celebration event due to the Dickson finally deciding
+    to leave us all in peace. I have no idea who you are or if we\u2019re accomodated,
+    but you're welcome to join! \LIt will be at [Event Location], usual time!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "Oh, good a- ACHOO!/ I\u2019m *sniff* sorry!/ You see, it\u2019s ju- ACHOO!/
+    Toda... ACHOO!/ Polle- *sniff* Pollen!/ ACHOO!/ Oh god...*sniff*/ ...Please someone
+    help-/ ACHOO!"
+  - "\xBFHola junaites steits? \xBFParque nacional de los stones?/Es un llama que
+    llama/\xBFPodr\xEDa hablar con el chivo que chiva?/AAAAAJAJAJAJAJA/\xBFO con
+    la pava que pavea?/AAAAAJAJAJAJAJA/\xBFO con la ara\xF1a que ara\xF1a?/AAAAAJAJAJAJAJA/\xBFO
+    con el rinoceronte que rinoceronta?/AAAaaja.... \xBFA?/\xBFO con el hipop\xF3tamo
+    que hipot\xE1lamo?/..../\xBFO  con el cocodrilo que Dundee?/........ AYYY                
+    *dunk*/Tuve que hacerlo....."
+  PhoneStringsDay3:
+  - "What wasn't clear about \u201CDO. NOT. CALL. ME.\u201D??/ Why would you do that!/
+    You should already realize that I can't help you while being here... in Hawaii/
+    Oooh... I suppose you called to find out more about what it's like here.../ Here
+    in Hawaii.../ Well sure, I\u2019ll make an exeption and tell you. Only you!/
+    But! There is a CONDITION! You DO NOT call me again!/ So. About Hawaii.../ It's
+    great here. / And everybody loves me./ They gesture me to \u201Ccall them\u201D
+    all the time./ But how am I supposed to call them when they don\u2019t give me
+    their numbers..."
+  - 'Good afternoon, this is [Name of place]. Main manager Lisa speaking./ We have
+    perfumes for every taste./ Anything but... potatoes./ We had a break-in yesterday
+    and they stole our entire stock..../ But we have a new flavor of... [what flavor
+    was it again...raspberry?] uuh, berries! Coming soon. '
+  - "Hiiiiiii/ Actually, I promised mom I wouldn't talk to strangers./But you probably
+    called for a reason, right?/ Why don't you tell me your name and age, hmm, weird
+    stranger?/ Oh, you know what?! Soon my friend will release a new perfume! Thanks
+    to me!/ And then I'm gonna be popular!/ POPULAR ALL OVER THE WORLD!/ Hehehehehe.
+    I can't wait for it!/ I would say I will remember you when I\u2019m famous, but
+    honestly, I have no idea who you are./ Okay, byee, gotta go prepare for my famous
+    era!"
+  - 
+  - 
+  - "Hey! You've reached the [Cafe Name]./ This is the best cafe in this town!/ We
+    have everything!/ .../ EVERYTHING BUT THE FUCKING BUNS!!! FUCKING BUNS!!!/ THE
+    ONLY THING WE NEED IS BAKED DOUGH!!! I SWEAR I\u2019LL KILL HI-Please come to
+    the [Cafe Name]. We\u2019re always glad to see you."
+  - Good afternoon.[Name of bakery] speaking./ Unfortunately, we will not be able
+    to provide you with our products for the next couple of days. / The main manager
+    will also be out of town for a while, so the servises will be unavailable./ Please
+    accept our deepest apologies.
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - "\xBFHola junaites steits? \xBFParque nacional de los stones?/Es un llama que
+    llama/\xBFPodr\xEDa hablar con el chivo que chiva?/AAAAAJAJAJAJAJA/\xBFO con
+    la pava que pavea?/AAAAAJAJAJAJAJA/\xBFO con la ara\xF1a que ara\xF1a?/AAAAAJAJAJAJAJA/\xBFO
+    con el rinoceronte que rinoceronta?/AAAaaja.... \xBFA?/\xBFO con el hipop\xF3tamo
+    que hipot\xE1lamo?/..../\xBFO  con el cocodrilo que Dundee?/........ AYYY                
+    *dunk*/Tuve que hacerlo....."
+  PhoneStringsDay4:
+  - "You again? Didn't we have a chat already?/ Or it wasn\u2019t you? It\u2019s
+    so easy to get confused here you know?/ Because, when you're in Hawaii, there's
+    only one problem./ Someone's always calling and asking how Hawaii is!/ And you're
+    like. \u201CStop nagging me! I'm on a water expedition./ If you're so interested,
+    buy the tickets and see what it's like in Hawaii yourself.\u201D/ Oh, you poor
+    people, huh./ Just like you, huh! / Just like everybody else!/ Not like me in
+    Hawaii!"
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - "\xBFHola junaites steits? \xBFParque nacional de los stones?/Es un llama que
+    llama/\xBFPodr\xEDa hablar con el chivo que chiva?/AAAAAJAJAJAJAJA/\xBFO con
+    la pava que pavea?/AAAAAJAJAJAJAJA/\xBFO con la ara\xF1a que ara\xF1a?/AAAAAJAJAJAJAJA/\xBFO
+    con el rinoceronte que rinoceronta?/AAAaaja.... \xBFA?/\xBFO con el hipop\xF3tamo
+    que hipot\xE1lamo?/..../\xBFO  con el cocodrilo que Dundee?/........ AYYY                
+    *dunk*/Tuve que hacerlo....."
+  PhoneStringsDay5:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  PhoneStringsDay6:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  PhoneStringsDay7:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  PhoneStringsDay8:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  PhoneStringsDay9:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  CallsFromBoss:
+  - "Hello there! It's me, your boss Charles./ Listen, um. there's been an unfortunate
+    situation./ A woman named Leslie went missing recently./ And Mr Dickson didn't
+    come home a couple of days ago./ Pfft, what a name. Who names their kids like
+    that?/ You need to deal with this. And we- YOU\u2019VE been given 9 days to do
+    it!/ You don't even need to know the kidnapper's name, just find out where he's
+    taking everyone./ Don't wait up for me for at least two weeks, I've taken a holiday
+    to Hawaii./ And it's definitely not because I'm afraid of some kidnapper./ Anyway./
+    I left a little letter for you on how to do stuff and a data book. Check them
+    out./ So yeah. Do not call me, understood?/ I wasn\u2019t saving my holiday money
+    for nothing."
+  - Check
+  - Check
   IsThereSuchNumber: 0
   SpriteGray: {fileID: 334019653, guid: 919caddc6df84264a96d67a14896e6c0, type: 3}
   SpriteRed: {fileID: 427609200, guid: 919caddc6df84264a96d67a14896e6c0, type: 3}

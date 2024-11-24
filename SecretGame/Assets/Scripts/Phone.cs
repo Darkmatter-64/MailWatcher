@@ -11,6 +11,10 @@ public class Phone : MonoBehaviour
     public static string PhoneNumber = "";
     public GameObject AppearWhenUse;
     public GameObject DissapearWhenUse;
+    public bool Day1Accepted = false;
+    public bool Day4Accepted = false;
+    public bool Day9Accepted = false;
+    public static bool DaySpetial = false;
     [Header("Numbers")]
     public string[] Numbers;
     public float Timer = 0;
@@ -25,6 +29,14 @@ public class Phone : MonoBehaviour
     public string[] PhoneStringsDay1;
     public string[] PhoneStringsDay2;
     public string[] PhoneStringsDay3;
+    public string[] PhoneStringsDay4;
+    public string[] PhoneStringsDay5;
+    public string[] PhoneStringsDay6;
+    public string[] PhoneStringsDay7;
+    public string[] PhoneStringsDay8;
+    public string[] PhoneStringsDay9;
+    public string[] CallsFromBoss;
+    private string[] PhoneStrings;
     public bool IsThereSuchNumber;
     [Header("Pimpka")]
     public Sprite SpriteGray;
@@ -43,6 +55,72 @@ public class Phone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CameraMove.TheDay == 1 && Day1Accepted == false)
+        {
+            DaySpetial = true;
+        }
+        else if (CameraMove.TheDay != 1 && Day1Accepted == false)
+        {
+            DaySpetial = false;
+            Day1Accepted = true;
+        }
+        if (CameraMove.TheDay == 4 && Day4Accepted == false)
+        {
+            DaySpetial = true;
+        }
+        else if (CameraMove.TheDay != 4 && Day4Accepted == false)
+        {
+            DaySpetial = false;
+            Day4Accepted = true;
+        }
+        if (CameraMove.TheDay == 9 && Day9Accepted == false)
+        {
+            DaySpetial = true;
+        }
+        else if (CameraMove.TheDay != 9 && Day9Accepted == false)
+        {
+            DaySpetial = false;
+            Day9Accepted = true;
+        }
+
+
+
+        if (CameraMove.TheDay == 1)
+        {
+            PhoneStrings = PhoneStringsDay1;
+        }
+        else if (CameraMove.TheDay == 2)
+        {
+            PhoneStrings = PhoneStringsDay2;
+        }
+        else if (CameraMove.TheDay == 3)
+        {
+            PhoneStrings = PhoneStringsDay3;
+        }
+        else if (CameraMove.TheDay == 4)
+        {
+            PhoneStrings = PhoneStringsDay4;
+        }
+        else if (CameraMove.TheDay == 5)
+        {
+            PhoneStrings = PhoneStringsDay5;
+        }
+        else if (CameraMove.TheDay == 6)
+        {
+            PhoneStrings = PhoneStringsDay6;
+        }
+        else if (CameraMove.TheDay == 7)
+        {
+            PhoneStrings = PhoneStringsDay7;
+        }
+        else if (CameraMove.TheDay == 8)
+        {
+            PhoneStrings = PhoneStringsDay8;
+        }
+        else if (CameraMove.TheDay == 9)
+        {
+            PhoneStrings = PhoneStringsDay9;
+        }
         ShowNumber.text = PhoneNumber;
 
         if (PhoneNumber.Length > 4)
@@ -103,7 +181,7 @@ public class Phone : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (PhoneNumber.Length == 4)
+        if (PhoneNumber.Length == 4 && DaySpetial == false)
         {
             for (int i = 0; i < Numbers.Length; i++)
             {
@@ -113,7 +191,7 @@ public class Phone : MonoBehaviour
                     ItWorks = true;
                     StartWrite = true;
                     //TextFromPhone.text = PhoneStringsDay1[i];
-                    TextToWrite = PhoneStringsDay1[i];
+                    TextToWrite = PhoneStrings[i];
                     Debug.Log(TextToWrite);
                     PhoneNumber = "";
                     TextCloud.SetActive(true);
@@ -130,6 +208,36 @@ public class Phone : MonoBehaviour
                 }
             }
 
+        }
+        if (DaySpetial == true)
+        {
+            if (CameraMove.TheDay == 1)
+            {
+                Day1Accepted = true;
+                TextToWrite = CallsFromBoss[0];
+            }
+            else if (CameraMove.TheDay == 4)
+            {
+                TextToWrite = CallsFromBoss[1];
+                Day4Accepted = true;
+            }
+            else if (CameraMove.TheDay == 9)
+            {
+                TextToWrite = CallsFromBoss[2];
+                Day9Accepted = true;
+            }
+            DaySpetial = false;
+            CameraMove.CanOpenLetter = false;
+            ItWorks = true;
+            StartWrite = true;
+            Debug.Log(TextToWrite);
+            PhoneNumber = "";
+            TextCloud.SetActive(true);
+            AppearWhenUse.SetActive(true);
+            DissapearWhenUse.SetActive(false);
+            TextFromPhone.text = "";
+            TelefonoWorkds = true;
+            srPimpka.sprite = SpriteGreen;
         }
     }
     private IEnumerator RedPimpka()

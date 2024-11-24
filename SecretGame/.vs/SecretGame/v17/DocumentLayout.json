@@ -3,43 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|c:\\users\\miguel\\documents\\github\\secretgame\\secretgame\\assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|c:\\users\\miguel\\documents\\github\\secretgame\\secretgame\\assets\\scripts\\pointonmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pointonmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\assets\\scripts\\mappapercode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mappapercode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\assets\\scripts\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\assets\\scripts\\phonebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\phonebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\assets\\scripts\\animationcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animationcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\assets\\scripts\\pickupitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pickupitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\assets\\scripts\\keytonextday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\keytonextday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Miguel\\Documents\\GitHub\\MutationGame\\MutationGame\\Assets\\Script\\Echo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\assets\\scripts\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,129 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CameraMove.cs",
-              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\CameraMove.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraMove.cs",
-              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\CameraMove.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CameraMove.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T16:25:03.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PointOnMap.cs",
-              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PointOnMap.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PointOnMap.cs",
-              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PointOnMap.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PointOnMap.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAswGIAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T16:08:13.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MapPaperCode.cs",
-              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\MapPaperCode.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MapPaperCode.cs",
-              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\MapPaperCode.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MapPaperCode.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:49:39.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Test.cs",
-              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\Test.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Test.cs",
-              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\Test.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Test.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:39:41.139Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AnimationCode.cs",
-              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\AnimationCode.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AnimationCode.cs",
-              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\AnimationCode.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AnimationCode.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwB0AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T16:58:45.117Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Echo.cs",
-              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\MutationGame\\MutationGame\\Assets\\Script\\Echo.cs",
-              "RelativeDocumentMoniker": "..\\..\\MutationGame\\MutationGame\\Assets\\Script\\Echo.cs",
-              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\MutationGame\\MutationGame\\Assets\\Script\\Echo.cs",
-              "RelativeToolTip": "..\\..\\MutationGame\\MutationGame\\Assets\\Script\\Echo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T16:56:17.416Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "PhoneButton.cs",
               "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PhoneButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PhoneButton.cs",
               "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PhoneButton.cs",
               "RelativeToolTip": "Assets\\Scripts\\PhoneButton.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAgwBYAAAAAAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBgAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T09:26:11.518Z"
+              "WhenOpened": "2024-11-22T09:26:11.518Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "KeyToNextDay.cs",
-              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\KeyToNextDay.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\KeyToNextDay.cs",
-              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\KeyToNextDay.cs",
-              "RelativeToolTip": "Assets\\Scripts\\KeyToNextDay.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEYAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T09:12:18.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PickUpItem.cs",
-              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PickUpItem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PickUpItem.cs",
-              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PickUpItem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PickUpItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T07:30:41.275Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Phone.cs",
               "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\Phone.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Phone.cs",
               "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\Phone.cs",
               "RelativeToolTip": "Assets\\Scripts\\Phone.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAiwGsAAAA0AAAA",
+              "ViewState": "AQIAAAEBAAAAAAAAAAAqwNsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:19:26.93Z"
+              "WhenOpened": "2024-11-17T17:19:26.93Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -22,17 +22,20 @@ public class PhoneButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        sr.sprite = Sprite1;
-        if (Phone.StartWrite == false)
+        if (Phone.DaySpetial == false)
         {
-            if (Phone.PhoneNumber.Length < 4)
+            sr.sprite = Sprite1;
+            if (Phone.StartWrite == false)
             {
-                Phone.PhoneNumber += WriteNumber;
-                Debug.Log(Phone.PhoneNumber);
-            }
-            else
-            {
-                Phone.PhoneNumber = "";
+                if (Phone.PhoneNumber.Length < 4)
+                {
+                    Phone.PhoneNumber += WriteNumber;
+                    Debug.Log(Phone.PhoneNumber);
+                }
+                else
+                {
+                    Phone.PhoneNumber = "";
+                }
             }
         }
     }
