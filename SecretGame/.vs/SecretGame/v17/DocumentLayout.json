@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\assets\\scripts\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|c:\\users\\miguel\\documents\\github\\secretgame\\secretgame\\assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|c:\\users\\miguel\\documents\\github\\secretgame\\secretgame\\assets\\scripts\\pickupitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pickupitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|c:\\users\\miguel\\documents\\github\\secretgame\\secretgame\\assets\\scripts\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58369126-EE24-1CAD-F26A-E0FA7F9E8FCE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -18,11 +26,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CameraMove.cs",
+              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\CameraMove.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraMove.cs",
+              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\CameraMove.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraMove.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T22:25:02.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PickUpItem.cs",
+              "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PickUpItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PickUpItem.cs",
+              "ToolTip": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PickUpItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PickUpItem.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAA5wEQAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T21:47:30.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PhoneButton.cs",
               "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\PhoneButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PhoneButton.cs",
@@ -30,12 +64,11 @@
               "RelativeToolTip": "Assets\\Scripts\\PhoneButton.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAQwBgAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T09:26:11.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T09:26:11.518Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Phone.cs",
               "DocumentMoniker": "C:\\Users\\Miguel\\Documents\\GitHub\\SecretGame\\SecretGame\\Assets\\Scripts\\Phone.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Phone.cs",

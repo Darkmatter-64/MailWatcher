@@ -12,8 +12,6 @@ public class CameraMove : MonoBehaviour
     public static bool OnLetter = false;
     public static bool CanOpenLetter = true;
     public static Image LetterUIImage;
-    public Image LetterUIImageCurrent;
-    public GameObject LettersUI;
     public static int TheDay = 1;
 
 
@@ -21,7 +19,6 @@ public class CameraMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LetterUIImage = LetterUIImageCurrent;
         OnLetter = false;
         rb = GetComponent<Rigidbody2D>();
 
@@ -43,13 +40,6 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OnLetter == true)
-        {
-            LettersUI.SetActive(true);
-        }
-        else
-        {
-            LettersUI.SetActive(false);
-        }
+
     }
 }

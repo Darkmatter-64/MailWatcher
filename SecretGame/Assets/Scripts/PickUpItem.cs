@@ -9,13 +9,14 @@ public class PickUpItem : MonoBehaviour
     public bool dragging = false;
     private Vector3 offset;
     private Vector3 startPosition;
-    public Sprite LetterText;
+    public GameObject LetterText;
     public float HoldingTime;
     private bool OnCollisition;
 
     // Start is called before the first frame update
     private void Start()
     {
+        LetterText.SetActive(false);
         startPosition = transform.position;
     }
 
@@ -53,11 +54,10 @@ public class PickUpItem : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        CameraMove.LetterUIImage.sprite = LetterText;
         if (HoldingTime <= 0.14f && CameraMove.CanOpenLetter == true)
         {
+            LetterText.SetActive(true);
             CameraMove.CanOpenLetter = false;
-            CameraMove.OnLetter = true;
         }
         HoldingTime = 0;
         dragging = false;
@@ -66,6 +66,12 @@ public class PickUpItem : MonoBehaviour
             startPosition = transform.position;
         }
     }
+    public void Clouse()
+    {
+        LetterText.SetActive(false);
+        CameraMove.CanOpenLetter = true;
+    }
+
 
 
 
