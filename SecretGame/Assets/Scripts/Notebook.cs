@@ -17,6 +17,9 @@ public class Notebook : MonoBehaviour
     private Vector3 startPosition;
     public Sprite LetterText;
     public float HoldingTime;
+    public SpriteRenderer sr;
+
+    public int CurrentDay = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +57,12 @@ public class Notebook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CurrentDay != CameraMove.TheDay)
+        {
+            CurrentDay = CameraMove.TheDay;
+            sr.sortingOrder = 7;
+        }
+
         if (dragging == true && CameraMove.CanOpenLetter == true)
         {
             if (HoldingTime <= 1)
@@ -94,6 +103,11 @@ public class Notebook : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (CameraMove.ItemInHand != sr)
+        {
+            sr.sortingOrder = CameraMove.ItemInHand.sortingOrder + 1;
+            CameraMove.ItemInHand = sr;
+        }
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         dragging = true;
     }

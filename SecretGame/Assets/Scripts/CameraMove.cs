@@ -13,12 +13,14 @@ public class CameraMove : MonoBehaviour
     public static bool CanOpenLetter = true;
     public static Image LetterUIImage;
     public static int TheDay = 1;
-
+    public static SpriteRenderer ItemInHand;
+    public SpriteRenderer FirstItem;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        ItemInHand = FirstItem;
         OnLetter = false;
         rb = GetComponent<Rigidbody2D>();
 

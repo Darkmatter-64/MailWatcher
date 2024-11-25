@@ -61,6 +61,7 @@ public class Phone : MonoBehaviour
         }
         else if (CameraMove.TheDay != 1 && Day1Accepted == false)
         {
+            srPimpka.sprite = SpriteGray;
             DaySpetial = false;
             Day1Accepted = true;
         }
@@ -70,6 +71,7 @@ public class Phone : MonoBehaviour
         }
         else if (CameraMove.TheDay != 4 && Day4Accepted == false)
         {
+            srPimpka.sprite = SpriteGray;
             DaySpetial = false;
             Day4Accepted = true;
         }
@@ -79,10 +81,15 @@ public class Phone : MonoBehaviour
         }
         else if (CameraMove.TheDay != 9 && Day9Accepted == false)
         {
+            srPimpka.sprite = SpriteGray;
             DaySpetial = false;
             Day9Accepted = true;
         }
 
+        if (DaySpetial == true)
+        {
+            srPimpka.sprite = SpriteGreen;
+        }
 
 
         if (CameraMove.TheDay == 1)
@@ -148,7 +155,6 @@ public class Phone : MonoBehaviour
             if (IntTimer < TextToWrite.Length && NumberThatWas != IntTimer && TextToWrite[IntTimer] == '/' && SlashWorcked == false)
             {
                 SlashWorcked = true; 
-                Debug.Log("F");
                 NumberThatWas = IntTimer;
                 StartCoroutine(WaitToClearTime());
             }
@@ -179,6 +185,20 @@ public class Phone : MonoBehaviour
     }
 
 
+    public void ClousePhone()
+    {
+        TextFromPhone.text += "";
+        StartWrite = false;
+        NumberThatWas = 99999;
+        Timer = 0;
+        IntTimer = 0;
+        TextCloud.SetActive(false);
+        AppearWhenUse.SetActive(false);
+        DissapearWhenUse.SetActive(true);
+        CameraMove.CanOpenLetter = true;
+        TelefonoWorkds = false;
+        srPimpka.sprite = SpriteGray;
+    }
     private void OnMouseDown()
     {
         if (PhoneNumber.Length == 4 && DaySpetial == false)

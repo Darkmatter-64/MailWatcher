@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,9 @@ public class PickUpItem : MonoBehaviour
     public GameObject LetterText;
     public float HoldingTime;
     private bool OnCollisition;
+    public SpriteRenderer sr;
 
+    public int CurrentDay = 1;
     // Start is called before the first frame update
     private void Start()
     {
@@ -31,6 +34,10 @@ public class PickUpItem : MonoBehaviour
     }
     private void Update()
     {
+        if (CurrentDay != CameraMove.TheDay)
+        { 
+            Destroy(gameObject);
+        }
         if (dragging == true && CameraMove.CanOpenLetter == true)
         {
             if (HoldingTime <= 1)
@@ -49,6 +56,11 @@ public class PickUpItem : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (CameraMove.ItemInHand != sr)
+        {
+            sr.sortingOrder = CameraMove.ItemInHand.sortingOrder + 1;
+            CameraMove.ItemInHand = sr;
+        }
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         dragging = true;
     }
