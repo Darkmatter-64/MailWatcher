@@ -15,17 +15,15 @@ public class PointOnMap : MonoBehaviour
     public GameObject Paper;
     public bool GotTheButton = false;
     public bool PaperIn = false;
-    public GameObject ButtonLeft;
-    public GameObject ButtonRight;
     public GameObject CanvasPaper;
+    public Image ButtonLImage;
+    public Sprite LImage1;
+    public Sprite LImage2;
     public TMP_InputField TheText;
     // Start is called before the first frame update
     void Start()
     {
-        TextToDissapear.SetActive(false);
         Button.SetActive(false);
-        ButtonLeft.SetActive(false);
-        ButtonRight.SetActive(false);
         Paper.SetActive(false);
         CanvasPaper.SetActive(false);
     }
@@ -37,22 +35,25 @@ public class PointOnMap : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        TextToDissapear.SetActive(true);
-        animaTetxt.Play("TextPointAppear");
         if (GotTheButton == false)
         {
-            ButtonLeft.SetActive(false);
-            ButtonRight.SetActive(false);
             animaImage.Play("MouseEnter");
+        }
+        else
+        {
+            animaTetxt.Play("TextPointAppear");
         }
     }
 
     private void OnMouseExit()
     {
-        animaTetxt.Play("TextPointDissapear");
         if (GotTheButton == false)
         {
             animaImage.Play("MouseExit");
+        }
+        else 
+        {
+            animaTetxt.Play("TextPointDissapear");
         }
     }
 
@@ -60,12 +61,10 @@ public class PointOnMap : MonoBehaviour
     {
         if (GotTheButton == false)
         {
-            ButtonLeft.SetActive(true);
-            ButtonRight.SetActive(true);
             Button.SetActive(true);
+            animaTetxt.Play("TextPointAppear");
             GotTheButton = true;
             animaButton.Play("MapButtonIdleAppear");
-            animaTetxt.Play("TextAppearButtons");
         }
     }
 
@@ -73,14 +72,16 @@ public class PointOnMap : MonoBehaviour
 
     public void RemoveButton()
     {
-        animaTetxt.Play("TextDissapearButtons");
+        animaTetxt.Play("TextPointDissapear");
         GotTheButton = false;
+        animaImage.Play("MouseExit");
         animaButton.Play("MapButtonIdleDisappear");
         if (PaperIn == true)
         {
             PaperIn = false;
             TheText.text = "";
             animaPaper.Play("PaperFall");
+            ButtonLImage.sprite = LImage1;
         }
     }
 
@@ -88,12 +89,14 @@ public class PointOnMap : MonoBehaviour
     {
         if (PaperIn == false)
         {
+            ButtonLImage.sprite = LImage2;
             PaperIn = true;
             Paper.SetActive(true);
             animaPaper.Play("PaperAppear");
         }
         else
         {
+            ButtonLImage.sprite = LImage1;
             PaperIn = false;
             TheText.text = "";
             animaPaper.Play("PaperDissapear");

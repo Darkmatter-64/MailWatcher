@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 using UnityEngine.UI;
 
 public class PickUpItem : MonoBehaviour
@@ -14,11 +16,29 @@ public class PickUpItem : MonoBehaviour
     public float HoldingTime;
     private bool OnCollisition;
     public SpriteRenderer sr;
+    public Animator animator;
+    public int animnumber = 0;
 
     public int CurrentDay = 1;
     // Start is called before the first frame update
     private void Start()
     {
+        if (animnumber == 0)
+        {
+            animator.Play("LetterIdle");
+        }
+        else if (animnumber == 1)
+        {
+            animator.Play("LetterAppear1");
+        }
+        else if (animnumber == 2)
+        {
+            animator.Play("LetterAppear2");
+        }
+        else if (animnumber == 3)
+        {
+            animator.Play("LetterAppear3");
+        }
         LetterText.SetActive(false);
         startPosition = transform.position;
     }
@@ -73,9 +93,10 @@ public class PickUpItem : MonoBehaviour
         }
         HoldingTime = 0;
         dragging = false;
-        if (dragging == false && OnCollisition == false)
+        if (dragging == false && OnCollisition == false && CameraMove.CanOpenLetter == true)
         {
             startPosition = transform.position;
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + Random.Range(-23,23));
         }
     }
     public void Clouse()

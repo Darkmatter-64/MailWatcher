@@ -15,11 +15,13 @@ public class CameraMove : MonoBehaviour
     public static int TheDay = 1;
     public static SpriteRenderer ItemInHand;
     public SpriteRenderer FirstItem;
+    public GameObject[] DeilyBox;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        TheDay = 1;
         ItemInHand = FirstItem;
         OnLetter = false;
         rb = GetComponent<Rigidbody2D>();
@@ -27,6 +29,7 @@ public class CameraMove : MonoBehaviour
     }
     void FixedUpdate()
     {
+        DeilyBox[TheDay-1].SetActive(true);
         if (CanOpenLetter == true)
         {
             moveInputH = Input.GetAxis("Horizontal");

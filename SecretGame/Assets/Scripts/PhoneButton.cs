@@ -8,6 +8,8 @@ public class PhoneButton : MonoBehaviour
     public Sprite Sprite1;
     public Sprite Sprite2;
     public SpriteRenderer sr;
+    public AudioClip audioClips;
+    public AudioSource audioSr;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +24,11 @@ public class PhoneButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+
         if (Phone.DaySpetial == false)
         {
             sr.sprite = Sprite1;
+            audioSr.PlayOneShot(audioClips);
             if (Phone.StartWrite == false)
             {
                 if (Phone.PhoneNumber.Length < 4)

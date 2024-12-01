@@ -120,8 +120,9 @@ public class Notebook : MonoBehaviour
         }
         HoldingTime = 0;
         dragging = false;
-        if (dragging == false && OnCollisition == false)
+        if (dragging == false && OnCollisition == false && CameraMove.CanOpenLetter == true)
         {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + Random.Range(-23, 23));
             startPosition = transform.position;
         }
     }

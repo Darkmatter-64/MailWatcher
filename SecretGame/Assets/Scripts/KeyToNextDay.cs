@@ -27,6 +27,7 @@ public class KeyToNextDay : MonoBehaviour
     public SpriteRenderer part2;
     public SpriteRenderer part3;
     public SpriteRenderer part4;
+    public SpriteRenderer Smurf;
 
     public int CurrentDay = 1;
     // Start is called before the first frame update
@@ -34,8 +35,9 @@ public class KeyToNextDay : MonoBehaviour
     {
         CanvasQuestion.SetActive(false);
         startPosition = transform.position;
-        Panel.SetActive(false);
+        Panel.SetActive(true);
         DayText.color = Invisible;
+        ObjectAnimator.Play("CanvasMaskOpen");
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,6 +51,10 @@ public class KeyToNextDay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CameraMove.TheDay == 9)
+        { 
+        Destroy(gameObject);
+        }
         if (CurrentDay != CameraMove.TheDay)
         {
             CurrentDay = CameraMove.TheDay;
@@ -88,18 +94,23 @@ public class KeyToNextDay : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (CameraMove.ItemInHand != sr)
+        if (CameraMove.CanOpenLetter == true)
         {
-            sr.sortingOrder = CameraMove.ItemInHand.sortingOrder + 2;
-            part1.sortingOrder = CameraMove.ItemInHand.sortingOrder + 2;
-            part2.sortingOrder = CameraMove.ItemInHand.sortingOrder + 1;
-            part3.sortingOrder = CameraMove.ItemInHand.sortingOrder + 2;
-            part4.sortingOrder = CameraMove.ItemInHand.sortingOrder + 1;
-            CameraMove.ItemInHand = sr;
+
+
+            if (CameraMove.ItemInHand != sr)
+            {
+                sr.sortingOrder = CameraMove.ItemInHand.sortingOrder + 2;
+                part1.sortingOrder = CameraMove.ItemInHand.sortingOrder + 2;
+                part2.sortingOrder = CameraMove.ItemInHand.sortingOrder + 1;
+                part3.sortingOrder = CameraMove.ItemInHand.sortingOrder + 2;
+                part4.sortingOrder = CameraMove.ItemInHand.sortingOrder + 1;
+                CameraMove.ItemInHand = sr;
+            }
+            Panel.SetActive(true);
+            offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            dragging = true;
         }
-        Panel.SetActive(true);
-        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        dragging = true;
     }
 
     private void OnMouseUp()
@@ -110,9 +121,9 @@ public class KeyToNextDay : MonoBehaviour
         }
         HoldingTime = 0;
         dragging = false;
-        CameraMove.CanOpenLetter = false;
-        if (dragging == false && OnCollisition == false)
+        if (dragging == false && OnCollisition == false && CameraMove.CanOpenLetter == true)
         {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + Random.Range(-23, 23));
             startPosition = transform.position;
         }
     }
@@ -131,6 +142,7 @@ public class KeyToNextDay : MonoBehaviour
 
     public IEnumerator RunIt()
     {
+        CameraMove.ItemInHand = Smurf;
         CanvasQuestion.SetActive(false);
         StartDissapear = false;
         CameraMove.CanOpenLetter = false;
@@ -145,6 +157,7 @@ public class KeyToNextDay : MonoBehaviour
         CameraMove.CanOpenLetter = true;
         yield return new WaitForSeconds(2);
         StartDissapear = true;
+        CameraMove.ItemInHand = Smurf;
 
     }
 

@@ -1,11 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Phone : MonoBehaviour
 {
+    public float speed = 23f;
     public GameObject TextCloud;
+    public GameObject AnsweCloud;
+    public TMP_InputField TheTextNumber;
+    public bool AnsweredDay4 = false;
+    public int AnswerDay4;
+    public bool AnsweredDay8 = false;
+    public int AnswerDay8;
     public Text TextFromPhone;
     public Text ShowNumber;
     public static string PhoneNumber = "";
@@ -13,8 +24,12 @@ public class Phone : MonoBehaviour
     public GameObject DissapearWhenUse;
     public bool Day1Accepted = false;
     public bool Day4Accepted = false;
+    public bool Day5Accepted = false;
+    public bool Day8Accepted = false;
     public bool Day9Accepted = false;
     public static bool DaySpetial = false;
+    public bool GoodEnding = false;
+    public GameObject ShadowBody;
     [Header("Numbers")]
     public string[] Numbers;
     public float Timer = 0;
@@ -44,9 +59,23 @@ public class Phone : MonoBehaviour
     public Sprite SpriteGreen;
     public SpriteRenderer srPimpka;
     private bool TelefonoWorkds;
+    [Header("Voices")]
+    public AudioClip[] audioClips;
+    public AudioSource audioSr;
+    public AudioSource audioSr2;
+    public bool FemaleVoice = false;
+    public bool AlreadyDidSound = false;
+    [Header("SpetialItems")]
+    public GameObject CherdakMessage;
+    public GameObject[] Pigs;
+    public GameObject[] Ducks;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSr.mute = true;
+        ShadowBody.SetActive(false);
+        AnsweCloud.SetActive(false);
         AppearWhenUse.SetActive(false);
         DissapearWhenUse.SetActive(true);
         TextCloud.SetActive(false);
@@ -55,6 +84,18 @@ public class Phone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PhoneNumber == "1339" || PhoneNumber == "1454" || PhoneNumber == "1156")
+        {
+            FemaleVoice = true;
+        }
+        else if (PhoneNumber.Length == 4)
+        {
+            FemaleVoice = false;
+        }
+        if (AnswerDay8 == 26)
+        {
+
+        }
         if (CameraMove.TheDay == 1 && Day1Accepted == false)
         {
             DaySpetial = true;
@@ -69,17 +110,37 @@ public class Phone : MonoBehaviour
         {
             DaySpetial = true;
         }
-        else if (CameraMove.TheDay != 4 && Day4Accepted == false)
+        else if (CameraMove.TheDay > 4 && Day4Accepted == false)
         {
             srPimpka.sprite = SpriteGray;
             DaySpetial = false;
             Day4Accepted = true;
         }
+        if (CameraMove.TheDay == 5 && Day5Accepted == false)
+        {
+            DaySpetial = true;
+        }
+        else if (CameraMove.TheDay > 5 && Day5Accepted == false)
+        {
+            srPimpka.sprite = SpriteGray;
+            DaySpetial = false;
+            Day5Accepted = true;
+        }
+        if (CameraMove.TheDay == 8 && Day8Accepted == false)
+        {
+            DaySpetial = true;
+        }
+        else if (CameraMove.TheDay > 8 && Day8Accepted == false)
+        {
+            srPimpka.sprite = SpriteGray;
+            DaySpetial = false;
+            Day8Accepted = true;
+        }
         if (CameraMove.TheDay == 9 && Day9Accepted == false)
         {
             DaySpetial = true;
         }
-        else if (CameraMove.TheDay != 9 && Day9Accepted == false)
+        else if (CameraMove.TheDay > 9 && Day9Accepted == false)
         {
             srPimpka.sprite = SpriteGray;
             DaySpetial = false;
@@ -88,10 +149,18 @@ public class Phone : MonoBehaviour
 
         if (DaySpetial == true)
         {
+            audioSr.mute = false;
             srPimpka.sprite = SpriteGreen;
         }
+        else
+        {
+            audioSr.mute = true;
+        }
 
-
+        if (AnswerDay4 == 17)
+        {
+            CherdakMessage.SetActive(false);
+        }
         if (CameraMove.TheDay == 1)
         {
             PhoneStrings = PhoneStringsDay1;
@@ -124,9 +193,16 @@ public class Phone : MonoBehaviour
         {
             PhoneStrings = PhoneStringsDay8;
         }
+        else if (CameraMove.TheDay == 8)
+        {
+            PhoneStrings = PhoneStringsDay8;
+        }
         else if (CameraMove.TheDay == 9)
         {
-            PhoneStrings = PhoneStringsDay9;
+            if (AnswerDay8 == 26)
+            {
+                SceneManager.LoadScene("GoodEnding");
+            }
         }
         ShowNumber.text = PhoneNumber;
 
@@ -138,7 +214,7 @@ public class Phone : MonoBehaviour
         {
             if (SlashWorcked == false)
             {
-                Timer += Time.deltaTime * 23f;
+                Timer += Time.deltaTime * speed;
             }
             IntTimer = (int)Timer;
             if (IntTimer < TextToWrite.Length && NumberThatWas != IntTimer && TextToWrite[IntTimer] != '/')
@@ -146,6 +222,14 @@ public class Phone : MonoBehaviour
                 TextFromPhone.text += TextToWrite[IntTimer];
                 NumberThatWas = IntTimer;
                 SlashWorcked = false;
+                if (FemaleVoice == true && TextToWrite[IntTimer] != ' ' && speed != 200)
+                {
+                    audioSr2.PlayOneShot(audioClips[2]);
+                }
+                else if (FemaleVoice == false && TextToWrite[IntTimer] != ' ' && speed != 200)
+                {
+                    audioSr2.PlayOneShot(audioClips[3]);
+                }
             }
             else if (IntTimer == TextToWrite.Length)
             { 
@@ -164,29 +248,72 @@ public class Phone : MonoBehaviour
     }
     private IEnumerator WaitSomeTime()
     {
-        yield return new WaitForSeconds(1f);
-        TextFromPhone.text += "";
-        StartWrite = false;
-        NumberThatWas = 99999;
-        Timer = 0;
-        IntTimer = 0;
-        TextCloud.SetActive(false);
-        AppearWhenUse.SetActive(false);
-        DissapearWhenUse.SetActive(true);
-        CameraMove.CanOpenLetter = true;
-        TelefonoWorkds = false;
-        srPimpka.sprite = SpriteGray;
+        if (CameraMove.TheDay == 4 && TextToWrite == PhoneStringsDay4[0] && AnsweredDay4 == false)
+        {
+            AnsweCloud.SetActive(true);
+        }
+        else if (CameraMove.TheDay == 8 && TextToWrite == PhoneStringsDay8[0] && AnsweredDay8 == false)
+        {
+            AnsweCloud.SetActive(true);
+        }
+        else
+        {
+            yield return new WaitForSeconds(1f);
+            TextFromPhone.text += "";
+            StartWrite = false;
+            NumberThatWas = 99999;
+            Timer = 0;
+            IntTimer = 0;
+            TextCloud.SetActive(false);
+            AppearWhenUse.SetActive(false);
+            DissapearWhenUse.SetActive(true);
+            CameraMove.CanOpenLetter = true;
+            TelefonoWorkds = false;
+            srPimpka.sprite = SpriteGray;
+            DaySpetial = false;
+            speed = 23f;
+            if (CameraMove.TheDay == 9)
+            {
+                ShadowBody.SetActive(true);
+            }
+            StartCoroutine(SoudClousePhone());
+        }
     }
     private IEnumerator WaitToClearTime()
     {
         yield return new WaitForSeconds(1f);
         TextFromPhone.text = "";
         Timer += 1;
+        speed = 23f;
     }
 
+    public void SkipText()
+    {
+        speed = 200f;
+    }
 
+    public void AcceptHouseNumber()
+    {
+        if (CameraMove.TheDay == 4)
+        {
+            PhoneStringsDay4[0] = CallsFromBoss[6];
+            AnsweredDay4 = true;
+            AnswerDay4 = Int32.Parse(TheTextNumber.text);
+        }
+        if (CameraMove.TheDay == 8)
+        {
+            PhoneStringsDay8[0] = CallsFromBoss[6];
+            AnsweredDay8 = true;
+            AnswerDay8 = Int32.Parse(TheTextNumber.text);
+        }
+        TheTextNumber.text = "";
+        ClousePhone();
+    }
     public void ClousePhone()
     {
+        audioSr2.PlayOneShot(audioClips[1]);
+        DaySpetial = false;
+        AnsweCloud.SetActive(false);
         TextFromPhone.text += "";
         StartWrite = false;
         NumberThatWas = 99999;
@@ -198,11 +325,24 @@ public class Phone : MonoBehaviour
         CameraMove.CanOpenLetter = true;
         TelefonoWorkds = false;
         srPimpka.sprite = SpriteGray;
+        if (CameraMove.TheDay == 9)
+        {
+            ShadowBody.SetActive(true);
+        }
     }
     private void OnMouseDown()
     {
         if (PhoneNumber.Length == 4 && DaySpetial == false)
         {
+            if (PhoneNumber == "1667")
+            {
+                Pigs[CameraMove.TheDay + 1].SetActive(true);
+            }
+            if (PhoneNumber == "1776")
+            {
+                Ducks[CameraMove.TheDay + 1].SetActive(true);
+            }
+            audioSr2.PlayOneShot(audioClips[0]);
             for (int i = 0; i < Numbers.Length; i++)
             {
                 if (Numbers[i].Equals(PhoneNumber) && i < Numbers.Length)
@@ -231,6 +371,7 @@ public class Phone : MonoBehaviour
         }
         if (DaySpetial == true)
         {
+            audioSr2.PlayOneShot(audioClips[0]);
             if (CameraMove.TheDay == 1)
             {
                 Day1Accepted = true;
@@ -241,9 +382,45 @@ public class Phone : MonoBehaviour
                 TextToWrite = CallsFromBoss[1];
                 Day4Accepted = true;
             }
+            else if (CameraMove.TheDay == 5)
+            {
+                if (AnsweredDay4 == false)
+                {
+                    TextToWrite = CallsFromBoss[2];
+                }
+                else if (AnswerDay4 != 17 && AnswerDay4 != 26)
+                {
+                    TextToWrite = CallsFromBoss[3];
+                }
+                else if (AnswerDay4 == 17)
+                {
+                    TextToWrite = CallsFromBoss[4];
+                }
+                else if (AnswerDay4 == 26)
+                {
+                    TextToWrite = CallsFromBoss[5];
+                }
+                Day5Accepted = true;
+            }
+            else if (CameraMove.TheDay == 8)
+            {
+                TextToWrite = CallsFromBoss[7];
+                Day8Accepted = true;
+            }
             else if (CameraMove.TheDay == 9)
             {
-                TextToWrite = CallsFromBoss[2];
+                if (AnsweredDay8 == false)
+                {
+                    TextToWrite = CallsFromBoss[8];
+                }
+                else if (AnswerDay8 != 26)
+                {
+                    TextToWrite = CallsFromBoss[9];
+                }
+                else if (AnswerDay8 == 26)
+                {
+                    GoodEnding = true;
+                }
                 Day9Accepted = true;
             }
             DaySpetial = false;
@@ -297,6 +474,18 @@ public class Phone : MonoBehaviour
         srPimpka.sprite = SpriteRed;
         yield return new WaitForSeconds(0.1f);
         srPimpka.sprite = SpriteGray;
+    }
+    private IEnumerator SoudClousePhone()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (AlreadyDidSound == false)
+        {
+            AlreadyDidSound = true;
+            audioSr2.PlayOneShot(audioClips[1]);
+        }
+        yield return new WaitForSeconds(0.5f);
+        AlreadyDidSound = false;
+
     }
 
 }
