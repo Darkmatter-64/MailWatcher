@@ -9,6 +9,8 @@ public class AnimationCode : MonoBehaviour
     public GameObject Item3;
     public Animator ObjectAnimator;
     public GameObject Panel;
+    public AudioSource audioSr;
+    public AudioClip[] audioClips;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,18 @@ public class AnimationCode : MonoBehaviour
     public void OpenLetterCanNot()
     {
         CameraMove.CanOpenLetter = false;
+    }
+    public void AudioPlay1()
+    {
+        audioSr.PlayOneShot(audioClips[0]);
+    }
+    public void AudioPlay2()
+    {
+        audioSr.PlayOneShot(audioClips[1]);
+    }
+    public void AudioPlay3()
+    {
+        audioSr.PlayOneShot(audioClips[2]);
     }
 
     public void ChooseRandomtoFalse()

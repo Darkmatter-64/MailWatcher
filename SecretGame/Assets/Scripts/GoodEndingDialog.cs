@@ -9,13 +9,14 @@ public class GoodEndingDialog : MonoBehaviour
     public Animator ObjectAnimator;
     public Text textUI;
     public string[] lines;
-    public Sprite[] sprites;
     public float textspeed;
-    public Image TheImage;
     public GameObject Confetti;
     public GameObject Panel;
 
     private int index;
+
+    public AudioSource audioSr;
+    public AudioClip[] audioClips;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,6 @@ public class GoodEndingDialog : MonoBehaviour
     // Update is called once per frame
     void Update()  
     {
-        TheImage.sprite = sprites[index];  
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -53,10 +53,14 @@ public class GoodEndingDialog : MonoBehaviour
 
     IEnumerator StartPre()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.7f);
         Confetti.SetActive(true);
         yield return new WaitForSeconds(0.05f);
         StartDiaologue();
+        yield return new WaitForSeconds(1f);
+        audioSr.PlayOneShot(audioClips[0]);
+        yield return new WaitForSeconds(0.07f);
+        audioSr.PlayOneShot(audioClips[1]);
     }
     IEnumerator TypeLine()
     {

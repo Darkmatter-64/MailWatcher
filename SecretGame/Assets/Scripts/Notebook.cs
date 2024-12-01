@@ -20,6 +20,12 @@ public class Notebook : MonoBehaviour
     public SpriteRenderer sr;
 
     public int CurrentDay = 1;
+
+    public AudioSource audioSr;
+    public AudioClip[] audioClips;
+    public bool PlayedSound = false;
+    private float pi1 = 0.8f;
+    private float pi2 = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -108,6 +114,8 @@ public class Notebook : MonoBehaviour
             sr.sortingOrder = CameraMove.ItemInHand.sortingOrder + 1;
             CameraMove.ItemInHand = sr;
         }
+        audioSr.pitch = Random.Range(pi1, pi2);
+        audioSr.PlayOneShot(audioClips[0]);
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         dragging = true;
     }
@@ -122,6 +130,8 @@ public class Notebook : MonoBehaviour
         dragging = false;
         if (dragging == false && OnCollisition == false && CameraMove.CanOpenLetter == true)
         {
+            audioSr.pitch = Random.Range(pi1, pi2);
+            audioSr.PlayOneShot(audioClips[1]);
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + Random.Range(-23, 23));
             startPosition = transform.position;
         }
@@ -130,14 +140,20 @@ public class Notebook : MonoBehaviour
     {
         CameraMove.CanOpenLetter = true;
         CanvasNotebook.SetActive(false);
+        audioSr.pitch = Random.Range(pi1, pi2);
+        audioSr.PlayOneShot(audioClips[1]);
     }
     public void RightButton()
     {
         PageNumber++;
+        audioSr.pitch = Random.Range(pi1, pi2);
+        audioSr.PlayOneShot(audioClips[2]);
     }
     public void LeftButton()
     {
         PageNumber--;
+        audioSr.pitch = Random.Range(pi1, pi2);
+        audioSr.PlayOneShot(audioClips[2]);
     }
 
 }
