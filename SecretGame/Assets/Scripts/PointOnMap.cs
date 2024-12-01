@@ -59,7 +59,7 @@ public class PointOnMap : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GotTheButton == false)
+        if (GotTheButton == false && CameraMove.CanOpenLetter == true)
         {
             Button.SetActive(true);
             animaTetxt.Play("TextPointAppear");

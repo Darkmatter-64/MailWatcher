@@ -27,6 +27,7 @@ public class CameraMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CanOpenLetter = true;
         EscapeMenu.SetActive(false);
         TheDay = 1;
         ItemInHand = FirstItem;
