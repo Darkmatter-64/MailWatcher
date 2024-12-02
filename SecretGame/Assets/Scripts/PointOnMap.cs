@@ -19,6 +19,7 @@ public class PointOnMap : MonoBehaviour
     public Image ButtonLImage;
     public Sprite LImage1;
     public Sprite LImage2;
+    public CircleCollider2D cc2d;
     public TMP_InputField TheText;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,14 @@ public class PointOnMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (GotTheButton == false)
+        {//-0.005855696
+            cc2d.radius = 0.3907061f;
+        }
+        else if (GotTheButton == true)
+        {
+            cc2d.radius = 0.7247019f;
+        }
     }
     private void OnMouseEnter()
     {

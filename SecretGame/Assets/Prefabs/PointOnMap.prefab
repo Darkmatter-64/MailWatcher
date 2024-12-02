@@ -936,6 +936,7 @@ MonoBehaviour:
   ButtonLImage: {fileID: 0}
   LImage1: {fileID: 0}
   LImage2: {fileID: 0}
+  cc2d: {fileID: 5046145381004610445}
   TheText: {fileID: 2084524123236098715}
 --- !u!58 &5046145381004610445
 CircleCollider2D:
