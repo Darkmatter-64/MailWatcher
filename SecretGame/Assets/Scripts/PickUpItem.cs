@@ -51,11 +51,17 @@ public class PickUpItem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Current code detects collision so it won't let you place items outside of the frame
         if (collision.tag == "Out")
         {
             OnCollisition = true;
             //dragging = false;
             //transform.position = startPosition;
+        }
+        // Adding a 'reverse' to allow items to go outside then back into frame without hiccup.
+        else if (collision.tag != "Out")
+        {
+            OnCollisition = false;
         }
     }
     private void Update()
