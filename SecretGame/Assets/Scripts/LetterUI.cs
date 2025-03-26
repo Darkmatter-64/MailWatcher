@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Code after you open any letter */
+
 public class LetterUI : MonoBehaviour
 {
 

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* This code is for the post-it notes on the Map points */
+
 public class MapPaperCode : MonoBehaviour
 {
     // Fixed typo

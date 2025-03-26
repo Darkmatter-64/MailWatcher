@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* All this code is for the profiles/phone numbers within the book */
+
 public class DataFolder : MonoBehaviour
 {
     public GameObject CanvasDataFolder;
