@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,12 +20,20 @@ public class PointOnMap : MonoBehaviour
     public Image ButtonLImage;
     public Sprite LImage1;
     public Sprite LImage2;
+    // Change to use List
+    public List<Sprite> LImages;
+
+    
     public CircleCollider2D cc2d;
     public TMP_InputField TheText;
     // Start is called before the first frame update
     void Start()
     {
-        Button.SetActive(false);
+        // Change to use List
+        LImages = new List<Sprite>(new Sprite[]{ LImage1, LImage2 });
+
+
+    Button.SetActive(false);
         Paper.SetActive(false);
         CanvasPaper.SetActive(false);
     }
@@ -89,7 +98,7 @@ public class PointOnMap : MonoBehaviour
             PaperIn = false;
             TheText.text = "";
             animaPaper.Play("PaperFall");
-            ButtonLImage.sprite = LImage1;
+            ButtonLImage.sprite = LImages[0]; //LImage1;
         }
     }
 
@@ -97,14 +106,14 @@ public class PointOnMap : MonoBehaviour
     {
         if (PaperIn == false)
         {
-            ButtonLImage.sprite = LImage2;
+            ButtonLImage.sprite = LImages[1];//LImage2;
             PaperIn = true;
             Paper.SetActive(true);
             animaPaper.Play("PaperAppear");
         }
         else
         {
-            ButtonLImage.sprite = LImage1;
+            ButtonLImage.sprite = LImages[0]; // LImage1
             PaperIn = false;
             TheText.text = "";
             animaPaper.Play("PaperDissapear");
