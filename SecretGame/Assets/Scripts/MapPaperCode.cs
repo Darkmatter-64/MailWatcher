@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MapPaperCode : MonoBehaviour
 {
-    public GameObject PaperCnavas;
+    // Fixed typo
+    public GameObject PaperCanvas; // Used to say 'PaperCnavas'
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,11 @@ public class MapPaperCode : MonoBehaviour
     private void OnMouseDown()
     {
         CameraMove.CanOpenLetter = false;
-        PaperCnavas.SetActive(true);
+        PaperCanvas.SetActive(true);
     }
     public void CloseFolder()
     {
         CameraMove.CanOpenLetter = true;
-        PaperCnavas.SetActive(false);
+        PaperCanvas.SetActive(false);
     }
 }
