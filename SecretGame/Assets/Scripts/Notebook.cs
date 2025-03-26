@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Notebook : MonoBehaviour
 {
     public GameObject CanvasNotebook;
-    public GameObject[] Pages;
-    public int PageNumber = 0;
+    //public GameObject[] Pages;
+    public LinkedList<GameObject> Pages; // Change to Linked List
+    public int PageNumber = 0; // Current page
     public GameObject RightButtonObject;
     public GameObject LeftButtonObject;
 
@@ -34,21 +36,24 @@ public class Notebook : MonoBehaviour
         }
         //NotebookText = Pages[0];
         CanvasNotebook.SetActive(false);
-        Pages[1].SetActive(false);
-        Pages[2].SetActive(false);
-        Pages[3].SetActive(false);
-        Pages[4].SetActive(false);
-        Pages[5].SetActive(false);
-        Pages[6].SetActive(false);
-        Pages[7].SetActive(false);
-        Pages[8].SetActive(false);
-        Pages[9].SetActive(false);
-        Pages[10].SetActive(false);
-        Pages[11].SetActive(false);
-        Pages[12].SetActive(false);
-        Pages[13].SetActive(false);
-        Pages[14].SetActive(false);
-        Pages[15].SetActive(false);
+        Pages.AddFirst(new GameObject());
+        Pages.ElementAt(0).SetActive(true);
+        // Old method set 16 FIXED pages. Using Linked List to have 'infinite' pages in Notebook.
+        //Pages[1].SetActive(false);
+        //Pages[2].SetActive(false);
+        //Pages[3].SetActive(false);
+        //Pages[4].SetActive(false);
+        //Pages[5].SetActive(false);
+        //Pages[6].SetActive(false);
+        //Pages[7].SetActive(false);
+        //Pages[8].SetActive(false);
+        //Pages[9].SetActive(false);
+        //Pages[10].SetActive(false);
+        //Pages[11].SetActive(false);
+        //Pages[12].SetActive(false);
+        //Pages[13].SetActive(false);
+        //Pages[14].SetActive(false);
+        //Pages[15].SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -58,6 +63,10 @@ public class Notebook : MonoBehaviour
             OnCollisition = true;
             //dragging = false;
             //transform.position = startPosition;
+        }
+        else if (collision.tag != "Out")
+        {
+            OnCollisition = false;
         }
     }
     // Update is called once per frame
@@ -85,26 +94,41 @@ public class Notebook : MonoBehaviour
 
         }
 
-        Pages[PageNumber].SetActive(true);
+        //Pages[PageNumber].SetActive(true);
+        Pages.ElementAt(PageNumber).SetActive(true);
 
         if (PageNumber == 0)
         {
             RightButtonObject.SetActive(true);
             LeftButtonObject.SetActive(false);
-            Pages[PageNumber + 1].SetActive(false);
+            // Add new page
+            if (Pages.Count() <= 1)
+                Pages.AddLast(new GameObject());
+
+            //Pages[PageNumber + 1].SetActive(false);
+            Pages.ElementAt(PageNumber + 1).SetActive(false); // For LinkedList
         }
-        else if (PageNumber == Pages.Length - 1)
-        {
-            RightButtonObject.SetActive(false);
-            LeftButtonObject.SetActive(true);
-            Pages[PageNumber - 1].SetActive(false);
-        }
+        // By new method, never on 'last' page
+        //else if (PageNumber == Pages.Count() - 1)
+        //{
+
+        //    RightButtonObject.SetActive(false);
+        //    LeftButtonObject.SetActive(true);
+        //    Pages[PageNumber - 1].SetActive(false);
+        //}
         else
         {
+            if(Pages.Count() <= PageNumber + 1) // On last page
+            {
+                Pages.AddLast(new GameObject());
+            }
             LeftButtonObject.SetActive(true);
             RightButtonObject.SetActive(true);
-            Pages[PageNumber - 1].SetActive(false);
-            Pages[PageNumber + 1].SetActive(false);
+            //Pages[PageNumber - 1].SetActive(false);
+            //Pages[PageNumber + 1].SetActive(false);
+            // For LinkedList
+            Pages.ElementAt(PageNumber - 1).SetActive(false);
+            Pages.ElementAt(PageNumber + 1).SetActive(false);
         }
     }
     private void OnMouseDown()
